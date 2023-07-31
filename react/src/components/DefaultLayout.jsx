@@ -31,8 +31,8 @@ export default function DefaultLayout() {
     return (
         <div id="defaultLayout">
             <aside>
-                <Link to="/dashboard">Dashboard</Link>
-                <Link to="/users">Users</Link>
+                <Link to="/dashboard">Bảng điều khiển</Link>
+                <Link to="/users">Quản lý người dùng</Link>
             </aside>
             <div className="content">
                 <header>
@@ -41,7 +41,7 @@ export default function DefaultLayout() {
                     </div>
                     <div>
                         {user.name} &nbsp;
-                        <a onClick={onLogout} className="btn-logout" href="#">Logout</a>
+                        <a onClick={onLogout} className="btn-logout" href="#">Đăng xuất</a>
                     </div>
                 </header>
                 <main>

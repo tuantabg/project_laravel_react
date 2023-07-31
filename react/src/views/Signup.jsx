@@ -38,7 +38,7 @@ export default function Signup() {
         <div className="login-signup-form animated fadeInDown">
             <div className="form">
                 <form onSubmit={onSubmit}>
-                    <h1 className="title">Signup for Free</h1>
+                    <h1 className="title">Đăng kí tài khoản</h1>
                     
                     {errors &&
                         <div className="alert">
@@ -48,12 +48,12 @@ export default function Signup() {
                         </div>
                     }
 
-                    <input ref={nameRef} type="text" placeholder="Full Name" aria-label="Full Name" />
-                    <input ref={emailRef} type="email" placeholder="Email Address" aria-label="Email Address" />
-                    <input ref={passwordRef} type="password" placeholder="Password" aria-label="Password" />
-                    <input ref={passwordConfirmationRef} type="password" placeholder="Repeat Password" aria-label="Repeat Password" />
-                    <button className="btn btn-block">Signup</button>
-                    <p className="message">Already registered? <Link to="/login">Sign In</Link></p>
+                    <input ref={nameRef} type="text" placeholder="Họ và tên" aria-label="Full Name" />
+                    <input ref={emailRef} type="email" placeholder="Địa chỉ email" aria-label="Email Address" />
+                    <input ref={passwordRef} type="password" placeholder="Mật khẩu" aria-label="Password" />
+                    <input ref={passwordConfirmationRef} type="password" placeholder="Lặp lại mật khẩu" aria-label="Repeat Password" />
+                    <button className="btn btn-block">Đăng ký</button>
+                    <p className="message">Đã đăng ký? <Link to="/login">Đăng nhập</Link></p>
                 </form>
             </div>
         </div>

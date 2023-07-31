@@ -30,7 +30,7 @@ class AuthController extends Controller
         $credentials = $request->validated();
         if (!Auth::attempt($credentials)) {
             return response([
-                'message' => 'Provided email or password is incorrect'
+                'message' => 'Email hoặc mật khẩu được cung cấp không chính xác.'
             ], 422);
         }
 

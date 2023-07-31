@@ -14,12 +14,12 @@ export default function Users() {
 
     const onDeleteClick = (user) => {
 
-        if (!window.confirm("Are you sure you want to delete this user?")) {
+        if (!window.confirm("Bạn có chắc chắn muốn xóa người dùng này?")) {
           return
         }
         axiosClient.delete(`/users/${user.id}`)
           .then(() => {
-            setNotification('User was successfully deleted')
+            setNotification('Người dùng đã được xóa thành công')
             getUsers()
           })
       }
@@ -37,50 +37,50 @@ export default function Users() {
     };
 
     return (
-        <div>
+        <>
             <div style={{display: 'flex', justifyContent: "space-between", alignItems: "center"}}>
-                <h1>Users</h1>
-                <Link className="btn-add" to="/users/new">Add new</Link>
+                <h1>Quản lý người dùng</h1>
+                <Link className="btn-add" to="/users/new">Thêm mới</Link>
             </div>
             <div className="card animated fadeInDown">
                 <table>
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Create Date</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                {loading &&
-                    <tbody>
-                    <tr>
-                    <td colSpan="5" className="text-center">
-                        Loading...
-                    </td>
-                    </tr>
-                    </tbody>
-                }
-                {!loading &&
-                    <tbody>
-                    {users.map(user => (
-                    <tr key={user.id}>
-                        <td>{user.id}</td>
-                        <td>{user.name}</td>
-                        <td>{user.email}</td>
-                        <td>{user.created_at}</td>
-                        <td>
-                        <Link className="btn-edit" to={'/users/' + user.id}>Edit</Link>
-                        &nbsp;
-                        <button className="btn-delete" onClick={() => onDeleteClick(user)}>Delete</button>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Họ và tên</th>
+                            <th>Email</th>
+                            <th>Tạo ngày</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    {loading &&
+                        <tbody>
+                        <tr>
+                        <td colSpan="5" className="text-center">
+                            Loading...
                         </td>
-                    </tr>
-                    ))}
-                    </tbody>
-                }
+                        </tr>
+                        </tbody>
+                    }
+                    {!loading &&
+                        <tbody>
+                            {users.map(user => (
+                                <tr key={user.id}>
+                                    <td>{user.id}</td>
+                                    <td>{user.name}</td>
+                                    <td>{user.email}</td>
+                                    <td>{user.created_at}</td>
+                                    <td>
+                                        <Link className="btn-edit" to={'/users/' + user.id}>Chỉnh sửa</Link>
+                                        &nbsp;
+                                        <button className="btn-delete" onClick={() => onDeleteClick(user)}>Xóa bỏ</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    }
                 </table>
             </div>
-        </div>
+        </>
     )
 }

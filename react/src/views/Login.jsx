@@ -33,7 +33,7 @@ export default function Login() {
         <div className="login-signup-form animated fadeInDown">
             <div className="form">
                 <form onSubmit={onSubmit}>
-                    <h1 className="title">Login into your account</h1>
+                    <h1 className="title">Đăng nhập vào tài khoản</h1>
 
                     {errors &&
                         <div className="alert">
@@ -43,11 +43,11 @@ export default function Login() {
                         </div>
                     }
 
-                    <input ref={emailRef} type="email" placeholder="Email" aria-label="email" />
-                    <input ref={passwordRef} type="password" placeholder="Password" aria-label="password" />
-                    <button className="btn btn-block">Login</button>
+                    <input ref={emailRef} type="email" placeholder="Địa chỉ email" aria-label="email" />
+                    <input ref={passwordRef} type="password" placeholder="Mật khẩu" aria-label="password" />
+                    <button className="btn btn-block">Đăng nhập</button>
                     <p className="message">
-                        Not Registered? <Link to="/signup">Create an account</Link>
+                        Chưa đăng ký? <Link to="/signup">Tạo một tài khoản</Link>
                     </p>
                 </form>
             </div>

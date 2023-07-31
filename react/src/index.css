@@ -231,6 +231,28 @@ table > tbody > tr > td {
     animation-name: fadeInDown;
 }
 
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.75rem 0;
+    list-style: none;
+}
+
+.breadcrumb .breadcrumb-item a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    float: left;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: #6c757d;
+    content: "/";
+}
+
+
 @keyframes fadeInDown {
     0% {
         opacity: 0;
